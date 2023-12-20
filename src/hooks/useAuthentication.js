@@ -8,17 +8,17 @@ const useAuthentication = () => {
   const { user } = AuthContext();
   const userInfo = user?.user || null;
   const router = useRouter();
-  const currentRoute = window.location.pathname;
+  // const currentRoute = Window.location.pathname;
 
-  useEffect(() => {
-    if (!userInfo && !GUEST_ROUTES.includes(currentRoute)) {
-      router.push("/login");
-    }
+  // useEffect(() => {
+  //   if (!userInfo && !GUEST_ROUTES.includes(currentRoute)) {
+  //     router.push("/login");
+  //   }
 
-    if (userInfo && GUEST_ROUTES.includes(currentRoute)) {
-      router.push("/home");
-    }
-  }, [userInfo, currentRoute, router]);
+  //   if (userInfo && GUEST_ROUTES.includes(currentRoute)) {
+  //     router.push("/home");
+  //   }
+  // }, [userInfo, currentRoute, router]);
 
   // Return some data if needed
   return { userInfo };
